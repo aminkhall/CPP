@@ -1,18 +1,22 @@
-NAME 	=	test
+NAME 	=	Account
 CC 		=	c++
+
+HEADER 	=	Account.hpp
 
 CFLAGS 	= 	 -Wall -Wextra -Werror -std=c++98
 
-SRC 	=	main.cpp \
+SRC 	=	Account.cpp \
+			tests.cpp \
 
 OBJ 	= 	${SRC:.cpp=.o}
 
 all: ${NAME}
 
+
 ${NAME} : ${OBJ}
 	 ${CC} ${OBJ} $(CFLAGS) -o ${NAME}
 
-%.o : %.cpp
+%.o : %.cpp $(HEADER)
 	 ${CC} $(CFLAGS)  -c $< -o $@
 	
 clean :
