@@ -4,9 +4,13 @@
 #include "Weapon.hpp"
 
 class HumanB{
-public:
+private:
     Weapon weapon;
     std::string name;
+public:
+    HumanB(const std::string& name);
+    HumanB(const std::string& name, const Weapon wp);
+    void setWeapon(Weapon wp);
     void attack();
 };
 
