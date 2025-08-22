@@ -1,7 +1,5 @@
-NAME 	=	Test
+NAME 	=	replace
 CC 		=	c++
-
-HEADER 	=	Account.hpp
 
 CFLAGS 	= 	 -Wall -Wextra -Werror -std=c++98
 
