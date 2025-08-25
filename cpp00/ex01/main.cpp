@@ -19,7 +19,8 @@ int main()
             std::string a_index;
             phonebook.show_data();
             std::cout << "Enter an index: ";
-            std::getline(std::cin, a_index);
+            if (!std::getline(std::cin, a_index))
+                break;
             if (is_digit(a_index))
             {
                 int index = stoi(a_index);
@@ -29,8 +30,6 @@ int main()
                     phonebook.search_contact(index);
             }
         }
-        else
-            std::cout << "Enter a valid command" << std::endl;
         std::cout << "Enter a command (ADD, SEARCH or EXIT): ";
     }
     return (0);

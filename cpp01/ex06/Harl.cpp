@@ -32,8 +32,8 @@ void Harl::complain(std::string level){
     void (Harl::*funcArray[4])() = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error }; 
 
     std::string funLevel[4] = { "DEBUG", "INFO", "WARNING", "ERROR"};
-    size_t i;
-    for (i = 0; i < 4; i++)
+    size_t i = 0;
+    for (; i < 4; i++)
     {
         if (level == funLevel[i])
             break;
@@ -41,16 +41,13 @@ void Harl::complain(std::string level){
     switch (i)
     {
         case 0:
-            (this->*funcArray[i])();
-            break;
+            (this->*funcArray[i++])();
         case 1:
-            (this->*funcArray[i])();
-            break;
+            (this->*funcArray[i++])();
         case 2:
-            (this->*funcArray[i])();
-            break;
+            (this->*funcArray[i++])();
         case 3:
-            (this->*funcArray[i])();
+            (this->*funcArray[i++])();
             break;
         default:
             std::cout << "Invalid choice" << std::endl;

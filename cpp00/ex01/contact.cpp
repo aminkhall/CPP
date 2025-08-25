@@ -1,6 +1,9 @@
 #include "contact.hpp"
 
-Contact::Contact(): is_set(false){}
+
+
+
+Contact::Contact() : is_set(false) {}
 void Contact::set_data(int *index)
 {
     std::string fname;
@@ -9,20 +12,20 @@ void Contact::set_data(int *index)
     std::string pnum;
     std::string dscrt;
     std::cout << "Enter first name: ";
-    std::getline(std::cin, fname);
-    if (!is_valid(fname)) return ;
+    if (!std::getline(std::cin, fname)) exit(1);
+    if (!is_valid(fname)) return;
     std::cout << "Enter last name: ";
-    std::getline(std::cin, lname);
-    if (!is_valid(lname)) return ;
+    if (!std::getline(std::cin, lname)) exit(1);
+    if (!is_valid(lname)) return;
     std::cout << "Enter nickname: ";
-    std::getline(std::cin, nname);
-    if (!is_valid(nname)) return ;
+    if (!std::getline(std::cin, nname)) exit(1);
+    if (!is_valid(nname)) return;
     std::cout << "Enter phone number: ";
-    std::getline(std::cin, pnum);
-    if (!is_valid(pnum)) return ;
+    if (!std::getline(std::cin, pnum)) exit(1);
+    if (!is_valid(pnum)) return;
     std::cout << "Enter darkest secret: ";
-    std::getline(std::cin, dscrt);
-    if (!is_valid(dscrt)) return ;
+    if (!std::getline(std::cin, dscrt)) exit(1);
+    if (!is_valid(dscrt)) return;
     first_name = fname;
     last_name = lname;
     nickname = nname;
@@ -53,12 +56,12 @@ void Contact::get_index_data(int index) const
 {
     if (index < 8 && index >= 0 && is_set)
     {
-        std::cout << first_name << std::endl;
-        std::cout << last_name << std::endl;
-        std::cout << nickname << std::endl;
-        std::cout << phone_number << std::endl;
-        std::cout << dark_secret << std::endl;
+        std::cout << "First name: " << first_name << std::endl;
+        std::cout << "Last name: " << last_name << std::endl;
+        std::cout << "Nickname: " << nickname << std::endl;
+        std::cout << "Phone number: " << phone_number << std::endl;
+        std::cout << "Darkest secret: " << dark_secret << std::endl;
     }
     else
-        std::cout << "Don't found" << std::endl;
+        std::cout << "Not found" << std::endl;
 }

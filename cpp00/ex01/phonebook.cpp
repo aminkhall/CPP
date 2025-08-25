@@ -7,7 +7,6 @@ void PhoneBook::add_contact()
     if (i > 7)
         i = 0;
     contact[i].set_data(&i);
-    std::cout << "index is: " << i << std::endl;
 }
 
 void PhoneBook::show_data()
