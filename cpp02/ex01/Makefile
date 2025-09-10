@@ -1,5 +1,5 @@
 NAME 	=	FIXED
-CC 		=	g++
+CC 		=	c++
 
 HEADER 	=	Fixed.hpp
 
