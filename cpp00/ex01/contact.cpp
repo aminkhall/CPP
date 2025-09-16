@@ -1,8 +1,5 @@
 #include "contact.hpp"
 
-
-
-
 Contact::Contact() : is_set(false) {}
 void Contact::set_data(int *index)
 {
