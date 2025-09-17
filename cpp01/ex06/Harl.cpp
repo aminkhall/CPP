@@ -50,7 +50,7 @@ void Harl::complain(std::string level){
             (this->*funcArray[i++])();
             break;
         default:
-            std::cout << "Invalid choice" << std::endl;
+            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
             break;
     }
 }

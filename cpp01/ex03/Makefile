@@ -1,6 +1,10 @@
 NAME 	=	Weapon
 CC 		=	c++
 
+HEADER 	=	HumanA.hpp \
+			HumanB.hpp \
+			Weapon.hpp \
+
 CFLAGS 	= 	 -Wall -Wextra -Werror -std=c++98
 
 SRC 	=	HumanA.cpp \
@@ -8,16 +12,14 @@ SRC 	=	HumanA.cpp \
 			Weapon.cpp \
 			main.cpp \
 
-
 OBJ 	= 	${SRC:.cpp=.o}
 
 all: ${NAME}
 
-
 ${NAME} : ${OBJ}
 	 ${CC} ${OBJ} $(CFLAGS) -o ${NAME}
 
-%.o : %.cpp $(HumanA.hpp) $(HumanB.hpp)
+%.o : %.cpp $(HEADER) 
 	 ${CC} $(CFLAGS)  -c $< -o $@
 	
 clean :
