@@ -41,6 +41,7 @@ int main() {
 
     // Try repairing ct1 when hit points are 0 (should do nothing)
     ct1.beRepaired(5);
+    scavTrap2.guardGate();
 
     return 0;
 }
