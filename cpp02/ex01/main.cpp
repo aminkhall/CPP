@@ -1,11 +1,12 @@
 #include "Fixed.hpp"
 
-int main( void ) {
+int main(void)
+{
     FIXED a;
-    FIXED const b( 10 );
-    FIXED const c( 42.42f );
-    FIXED const d( b );
-    a = FIXED( 1234.4321f );
+    FIXED const b(10);
+    FIXED const c(42.42f);
+    FIXED const d(b);
+    a = FIXED(1234.4321f);
     std::cout << "a is " << a << std::endl;
     std::cout << "b is " << b << std::endl;
     std::cout << "c is " << c << std::endl;

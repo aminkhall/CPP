@@ -1,8 +1,9 @@
 #include "Fixed.hpp"
 
-int main( void ) {
+int main(void)
+{
     FIXED a;
-    FIXED b( a );
+    FIXED b(a);
     FIXED c;
     c = b;
     std::cout << a.getRawBits() << std::endl;

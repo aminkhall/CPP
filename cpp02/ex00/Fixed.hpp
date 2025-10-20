@@ -3,17 +3,19 @@
 
 #include <iostream>
 
-class FIXED{
+class FIXED
+{
 private:
     int fix_point;
     static const int fractional;
+
 public:
     FIXED();
-    FIXED(const FIXED& other);
-    FIXED& operator=(const FIXED& other);
+    FIXED(const FIXED &other);
+    FIXED &operator=(const FIXED &other);
     ~FIXED();
-    int getRawBits( void ) const;
-    void setRawBits( int const raw );
+    int getRawBits(void) const;
+    void setRawBits(int const raw);
 };
 
 #endif
