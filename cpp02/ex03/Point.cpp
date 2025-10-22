@@ -16,12 +16,12 @@ Point::~Point() {}
 
 const FIXED Point::get_x() const
 {
-    return x;
+    return x.toFloat();
 }
 
 const FIXED Point::get_y() const
 {
-    return y;
+    return y.toFloat();
 }
 
 std::ostream &operator<<(std::ostream &o, const Point &other)

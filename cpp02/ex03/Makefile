@@ -1,7 +1,8 @@
-NAME 	=	FIXED
+NAME 	=	BSP
 CC 		=	c++
 
-HEADER 	=	Point.hpp
+HEADER 	=	Point.hpp \
+			Fixed.hpp \
 
 CFLAGS 	= 	 -Wall -Wextra -Werror -std=c++98
 
