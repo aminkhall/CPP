@@ -33,6 +33,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
         this->hit = other.hit;
         this->energy = other.energy;
         this->damage = other.damage;
+        this->gate = other.gate;
     }
     return *this;
 }
