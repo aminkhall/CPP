@@ -56,6 +56,11 @@ void ScavTrap::attack(const std::string &target)
 
 void ScavTrap::guardGate()
 {
+    if (energy <= 0 || hit <= 0)
+    {
+        std::cout << "ScavTrap: " << name << " Can't enter Gate Keeper mode 0 point left." << std::endl;
+        return;
+    }
     if (false == gate)
     {
         gate = true;
