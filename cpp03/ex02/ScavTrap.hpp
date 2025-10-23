@@ -6,6 +6,9 @@
 
 class ScavTrap : public ClapTrap
 {
+private:
+    bool gate;
+
 public:
     ScavTrap();                                 // default con
     ScavTrap(const std::string &name);          // con init name
