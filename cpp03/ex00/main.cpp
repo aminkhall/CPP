@@ -1,12 +1,13 @@
 #include "ClapTrap.hpp"
 
-int main() {
+int main()
+{
     // Default constructor
     ClapTrap ct1;
-    
+
     // Parameterized constructor
     ClapTrap ct2("Clappy");
-    
+
     // Copy constructor
     ClapTrap ct3 = ct2;
 
