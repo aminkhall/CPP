@@ -13,7 +13,7 @@ FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
     this->hit = 100;
     this->energy = 100;
     this->damage = 30;
-    std::cout << "FragTrap " << name << " constructor called." << std::endl;
+    std::cout << "FragTrap: " << name << " constructor called." << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
