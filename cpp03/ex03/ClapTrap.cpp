@@ -1,9 +1,9 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : name("default"), hit(10), energy(10), damage(0)
+ClapTrap::ClapTrap() : name("Default"), hit(10), energy(10), damage(0)
 {
     std::cout << "ClapTrap Default constructor called." << std::endl;
-};
+}
 
 ClapTrap::ClapTrap(const std::string &name) : name(name), hit(10), energy(10), damage(0)
 {
@@ -53,7 +53,7 @@ void ClapTrap::takeDamage(unsigned int amount)
         std::cout << "ClapTrap: " << name << " Can't take damage 0 point left." << std::endl;
         return;
     }
-    std::cout << name << " takes " << amount << " points of damage!" << std::endl;
+    std::cout << "ClapTrap: " << name << " takes " << amount << " points of damage!" << std::endl;
     if ((int)amount > hit)
         hit = 0;
     else
@@ -69,6 +69,6 @@ void ClapTrap::beRepaired(unsigned int amount)
     }
     hit += amount;
     energy--;
-    std::cout << name << " is repaired by " << amount
+    std::cout << "ClapTrap: " << name << " is repaired by " << amount
               << " points! Energy left: " << energy << std::endl;
 }

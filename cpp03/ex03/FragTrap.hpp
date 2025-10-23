@@ -2,6 +2,7 @@
 #define FRAG_TRAP_HPP
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 class FragTrap : public ClapTrap
 {

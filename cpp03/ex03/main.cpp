@@ -1,10 +1,11 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
     // Default constructor
     ClapTrap ct1;
     ScavTrap scavTrap1;
+    FragTrap ft("Hamid");
 
     // Parameterized constructor
     ClapTrap ct2("Clappy");
@@ -37,9 +38,11 @@ int main()
     // Damage ct1 until zero hit points
     ct1.takeDamage(20);
 
-    // Try repairing ct1 when hit points are 0 (should do nothing)
     ct1.beRepaired(5);
     scavTrap2.guardGate();
+    ft.highFivesGuys();
+    ft.attack("Mimi");
+    ft.takeDamage(50);
 
     return 0;
 }
