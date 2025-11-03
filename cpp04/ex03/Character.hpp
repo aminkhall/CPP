@@ -3,7 +3,7 @@
 
 #include "ICharacter.hpp"
 
-class Character
+class Character : public ICharacter
 {
 private:
     std::string name;
