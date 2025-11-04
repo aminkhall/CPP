@@ -9,7 +9,7 @@ HEADER 	=	AMateria.hpp \
 			IMateriaSource.hpp \
 			MateriaSource.hpp \
 
-CFLAGS 	= 	 #-fsanitize=address -g #-Wall -Wextra -Werror -std=c++98
+CFLAGS 	= 	 -fsanitize=address -g -Wall -Wextra -Werror -std=c++98
 
 SRC 	=	AMateria.cpp \
 			Character.cpp \

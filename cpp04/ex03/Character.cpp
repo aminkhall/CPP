@@ -1,6 +1,6 @@
 #include "Character.hpp"
 
-Character::Character() : name("default")
+Character::Character() : name("default"), inventory()
 {
     std::cout << "Character default constructor called." << std::endl;
 }

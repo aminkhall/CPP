@@ -13,6 +13,7 @@ IMateriaSource::IMateriaSource(const IMateriaSource &other)
 
 IMateriaSource &IMateriaSource::operator=(const IMateriaSource &other)
 {
+    (void) other;
     std::cout << "IMateriaSource assignment operator called." << std::endl;
     return *this;
 }
