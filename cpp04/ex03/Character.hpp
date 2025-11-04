@@ -8,6 +8,7 @@ class Character : public ICharacter
 private:
     std::string name;
     AMateria *inventory[4];
+    
 
 public:
     Character();
@@ -15,6 +16,7 @@ public:
     Character &operator=(const Character &other);
     ~Character();
 
+    Character(std::string const &name);
     std::string const &getName() const;
     void equip(AMateria *m);
     void unequip(int idx);
