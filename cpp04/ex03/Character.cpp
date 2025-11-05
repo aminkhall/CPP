@@ -10,7 +10,7 @@ Character::Character(std::string const &name) : name(name), inventory()
     std::cout << "Character " << name << " constructor called." << std::endl;
 }
 
-Character::Character(const Character &other)
+Character::Character(const Character &other) : ICharacter(other), inventory()
 {
     std::cout << "Character Copy constructor called." << std::endl;
     *this = other;

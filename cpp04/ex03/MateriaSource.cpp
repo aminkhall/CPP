@@ -5,7 +5,7 @@ MateriaSource::MateriaSource() : inventory()
     std::cout << "MateriaSource default constructor called." << std::endl;
 }
 
-MateriaSource::MateriaSource(const MateriaSource &other)
+MateriaSource::MateriaSource(const MateriaSource &other) : IMateriaSource(other), inventory()
 {
     std::cout << "MateriaSource Copy constructor called." << std::endl;
     *this = other;
