@@ -6,25 +6,8 @@
 
 int main()
 {
-
-     Cat basic;
-    {
-        Cat tmp = basic;
-        std::cout << "===============================" << std::endl;
-        tmp = basic;
-    }
-
     // Animal *meta = new Animal();
     // Animal *j = new Dog();
-
-
-
-
-    
-
-
-
-
     // test = test2;
 
 
