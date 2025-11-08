@@ -1,11 +1,13 @@
-NAME 	=	Bureaucrat 
+NAME 	=	Form 
 CC 		=	c++
 
 HEADER 	=	Bureaucrat.hpp \
+			Form.hpp \
 
 CFLAGS 	= 	-Wall -Wextra -Werror -std=c++98
 
 SRC 	=	Bureaucrat.cpp \
+			Form.cpp \
 			main.cpp \
 
 OBJ 	= 	${SRC:.cpp=.o}
