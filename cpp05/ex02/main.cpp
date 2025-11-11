@@ -1,5 +1,8 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
@@ -14,6 +17,11 @@ int main()
         // Bureaucrat c;
         // c = b;
         // b.decrement();
+        AForm *form;
+        ShrubberyCreationForm q("ab");
+        form = &q;
+        b.signForm(*form);
+        form->execute(b);
     }
     catch(const std::exception& e)
     {

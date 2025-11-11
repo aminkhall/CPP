@@ -3,7 +3,7 @@ CC 		=	c++
 
 HEADER 	=	Bureaucrat.hpp \
 			AForm.hpp \
-			ShrubberyCreationForm.cpp \ 
+			ShrubberyCreationForm.cpp \
 			RobotomyRequestForm.cpp \
 			PresidentialPardonForm.hpp \
 

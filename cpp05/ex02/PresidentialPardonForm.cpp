@@ -5,7 +5,7 @@ PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm
     std::cout << "PresidentialPardonForm default constructor called." << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string &target) : AForm("PresidentialPardonForm", 25, 5), target(target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5), target(target)
 {
     std::cout << "PresidentialPardonForm constructor called." << std::endl;
 }
@@ -35,7 +35,7 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const
     {
         if (getSign() == "No")
             throw NotSign();
-        if (executor.getGrade() < getGradeToSign())
+        if (executor.getGrade() > getGradeToSign())
             throw GradeTooLowException();
         std::cout << target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
     }

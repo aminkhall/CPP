@@ -5,7 +5,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 
     std::cout << "ShrubberyCreationForm default constructor called." << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string &target) : AForm("ShrubberyCreationForm", 145, 137), target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), target(target)
 {
     std::cout << "ShrubberyCreationForm constructor called." << std::endl;
 }
@@ -35,9 +35,9 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     {
         if (getSign() == "No")
             throw NotSign();
-        if (executor.getGrade() < getGradeToSign())
+        if (executor.getGrade() > getGradeToSign())
             throw GradeTooLowException();
-        std::ofstream outFile(target + "_shrubbery");
+        std::ofstream outFile((target + "_shrubbery").c_str());
         if (!outFile)
             throw Error();
 

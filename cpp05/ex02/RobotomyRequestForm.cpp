@@ -5,7 +5,7 @@ RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45
     std::cout << "RobotomyRequestForm default constructor called." << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string &target) : AForm("RobotomyRequestForm", 72, 45), target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), target(target)
 {
     std::cout << "RobotomyRequestForm constructor called." << std::endl;
 }
@@ -35,7 +35,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
     {
         if (getSign() == "No")
             throw NotSign();
-        if (executor.getGrade() < getGradeToSign())
+        if (executor.getGrade() > getGradeToSign())
             throw GradeTooLowException();
         srand(time(0));
         int x = rand() % 100 + 1;
