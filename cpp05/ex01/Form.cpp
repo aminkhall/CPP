@@ -61,18 +61,22 @@ int Form::getGradeToExecute() const
 
 void Form::beSigned(Bureaucrat &bureaucrat)
 {
-    if (bureaucrat.getGrade() > gradeToSign)
+    try
     {
-        std::cout << bureaucrat.getName() << " couldn’t sign " << name << " because " << " Grade Too Low " << std::endl;
-        throw Form::GradeTooLowException();
+        if (bureaucrat.getGrade() > gradeToSign)
+            throw Form::GradeTooLowException();
+        if (sign == false)
+        {
+            std::cout << bureaucrat.getName() << " signed " << name << std::endl;
+            sign = true;
+        }
+        else
+            std::cout << bureaucrat.getName() << " already signed " << name << std::endl;
     }
-    else if (sign == false)
+    catch (const std::exception &e)
     {
-        std::cout << bureaucrat.getName() << " signed " << name << std::endl;
-        sign = true;
+        std::cerr << bureaucrat.getName() << " couldn’t sign " << name << " because " << e.what() << std::endl;
     }
-    else
-        std::cout << bureaucrat.getName() << " already signed " << name << std::endl;
 }
 
 const char *Form::GradeTooHighException::what() const throw()

@@ -4,7 +4,6 @@
 #include <iostream>
 #include <exception>
 
-
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -16,7 +15,7 @@ private:
     const int gradeToSign;
     const int gradeToExecute;
     bool sign;
-    
+
 public:
     AForm();
     AForm(const AForm &other);
@@ -29,7 +28,7 @@ public:
     int getGradeToSign() const;
     int getGradeToExecute() const;
     void beSigned(Bureaucrat &bureaucrat);
-    virtual void execute(Bureaucrat const & executor) const = 0;
+    virtual void execute(Bureaucrat const &executor) const = 0;
 
     class GradeTooHighException : public std::exception
     {
@@ -39,6 +38,10 @@ public:
     class GradeTooLowException : public std::exception
     {
     public:
+        const char *what() const throw();
+    };
+    class NotSign : public std::exception
+    {
         const char *what() const throw();
     };
 };

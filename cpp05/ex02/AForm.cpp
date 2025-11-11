@@ -26,8 +26,9 @@ AForm::AForm(const AForm &other) : name(other.name), gradeToSign(other.gradeToSi
 
 AForm &AForm::operator=(const AForm &other)
 {
-    (void)other;
     std::cout << "AForm: " << name << " Copy assignment operator called." << std::endl;
+    if (this != &other)
+        this->sign = other.sign;
     return *this;
 }
 
@@ -61,18 +62,22 @@ int AForm::getGradeToExecute() const
 
 void AForm::beSigned(Bureaucrat &bureaucrat)
 {
-    if (bureaucrat.getGrade() > gradeToSign)
+    try
     {
-        std::cout << bureaucrat.getName() << " couldn’t sign " << name << " because " << " Grade Too Low " << std::endl;
-        throw AForm::GradeTooLowException();
+        if (bureaucrat.getGrade() > gradeToSign)
+            throw AForm::GradeTooLowException();
+        if (sign == false)
+        {
+            std::cout << bureaucrat.getName() << " signed " << name << std::endl;
+            sign = true;
+        }
+        else
+            std::cout << bureaucrat.getName() << " already signed " << name << std::endl;
     }
-    else if (sign == false)
+    catch(const std::exception& e)
     {
-        std::cout << bureaucrat.getName() << " signed " << name << std::endl;
-        sign = true;
+        std::cerr << bureaucrat.getName() << " couldn’t sign " << name << " because " << e.what() << std::endl;
     }
-    else
-        std::cout << bureaucrat.getName() << " already signed " << name << std::endl;
 }
 
 const char *AForm::GradeTooHighException::what() const throw()
@@ -83,6 +88,11 @@ const char *AForm::GradeTooHighException::what() const throw()
 const char *AForm::GradeTooLowException::what() const throw()
 {
     return "Grade Too Low";
+}
+
+const char *AForm::NotSign::what() const throw()
+{
+    return "Signature required";
 }
 
 std::ostream &operator<<(std::ostream &o, const AForm &other)
