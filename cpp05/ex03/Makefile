@@ -1,4 +1,4 @@
-NAME 	=	Form 
+NAME 	=	Intern 
 CC 		=	c++
 
 HEADER 	=	Bureaucrat.hpp \
@@ -6,6 +6,7 @@ HEADER 	=	Bureaucrat.hpp \
 			ShrubberyCreationForm.hpp \
 			RobotomyRequestForm.hpp \
 			PresidentialPardonForm.hpp \
+			Intern.hpp \
 
 CFLAGS 	= 	-Wall -Wextra -Werror -std=c++98
 
@@ -15,6 +16,7 @@ SRC 	=	Bureaucrat.cpp \
 			ShrubberyCreationForm.cpp \
 			RobotomyRequestForm.cpp \
 			PresidentialPardonForm.cpp \
+			Intern.cpp \
 
 OBJ 	= 	${SRC:.cpp=.o}
 
